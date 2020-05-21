@@ -1,0 +1,22 @@
+#---------------
+# spring 設定
+#---------------
+spring:
+  # 環境切り分け
+  profiles:
+    active: ${TARGET_ENV:local}
+  # jpa
+  jpa:
+    hibernate:
+      ddl-auto: none
+  # マイグレーション
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    out-of-order: true
+    locations: classpath:db/migration
+  # 日付フォーマット
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      write-dates-as-timestamps: false
