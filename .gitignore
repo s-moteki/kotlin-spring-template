@@ -16,8 +16,7 @@ build/
 
 ### IntelliJ IDEA ###
 .idea/*
-!.idea/codeStyles
-!.idea/google-java-format.xml
+# !.idea/codeStyles
 !.idea/inspectionProfiles
 !.idea/saveactions_settings.xml
 *.iws
