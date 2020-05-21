@@ -1,0 +1,27 @@
+DOCKER_BUILDKIT: "1"
+DB_ROOT_PASSWORD: password
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+  pre_build:
+    commands:
+      - echo "make result dir"
+      - mkdir -p output
+      - chmod 777 output
+  build:
+    commands:
+      - echo Building the Spring Project...
+      - ./gradlew build
+
+      - echo "run schemaspy..."
+      - docker run -v "$PWD/output:/output" --net="host" schemaspy/schemaspy:snapshot -t mysql -host localhost:3306 -db 名前 -u ユーザー名 -p パスワード -s project -charset utf-8
+  post_build:
+    commands:
+      - echo "done"
+# S3に向けます
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'output'
