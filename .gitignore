@@ -4,6 +4,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+/docker/mysql/db
+/docker/h2db
+/docker/mysql/logs/*
+!.gitkeep
 
 ### STS ###
 .apt_generated
