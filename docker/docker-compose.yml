@@ -42,3 +42,4 @@ services:
       MYSQL_PASSWORD: "root"
       MYSQL_ROOT_PASSWORD: "root"
       TZ: "Asia/Tokyo"
+      BIND-ADDRESS: 0.0.0.0
