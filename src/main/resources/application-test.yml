@@ -1,0 +1,19 @@
+###################
+# テスト環境設定
+# (CodeBuildの想定)
+###################
+
+#---------------
+# spring 設定
+#---------------
+spring:
+  # DB H2
+  datasource:
+    url: jdbc:h2:mem:restapi;DB_CLOSE_ON_EXIT=TRUE;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    connectionProperties: useUnicode=true;characterEncoding=utf-8;
+#---------------------
+# アプリケーション固有
+#---------------------

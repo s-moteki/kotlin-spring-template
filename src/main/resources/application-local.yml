@@ -1,0 +1,30 @@
+###########################
+# ローカル環境設定(デフォルト)
+###########################
+
+#---------------
+# spring 設定
+#---------------
+spring:
+  # DB
+  datasource:
+    url: jdbc:mysql://localhost:3306/sample-db?useSSL=false
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+#---------------
+# SQL LOG 設定
+#---------------
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+#---------------------
+# アプリケーション固有
+#---------------------

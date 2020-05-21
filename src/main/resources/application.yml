@@ -1,3 +1,7 @@
+################
+# 環境共通設定
+################
+
 #---------------
 # spring 設定
 #---------------
@@ -20,3 +24,7 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     serialization:
       write-dates-as-timestamps: false
+#---------------------
+# アプリケーション固有
+#---------------------
+

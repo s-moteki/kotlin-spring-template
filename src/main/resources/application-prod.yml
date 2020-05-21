@@ -1,0 +1,17 @@
+################
+# 本番環境設定
+################
+
+#---------------
+# spring 設定
+#---------------
+spring:
+  # DB
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: com.mysql.cj.jdbc.Driver
+#---------------------
+# アプリケーション固有
+#---------------------
