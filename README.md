@@ -29,6 +29,22 @@
 | Flyway | 5.2.3 | マイグレーション |  |
 | H2 | 1.4.191 | インメモリDB | CI/CD用 |
 
+## CI/CD構成  
+
+### ECSのデプロイ  
+
+buildspecをそれぞれの環境に適した設定で修正し、AWSコンソールから設定が必要。  
+参考 → [AWS公式ドキュメント](https://aws.amazon.com/jp/premiumsupport/knowledge-center/codepipeline-github-enterprise-ecs-app/ "AWS")  
+
+![ESC構成図](./doc/codepipeline-ecs.png)
+
+### ER図のホスティング
+
+buildspecをそれぞれの環境に適した設定で修正し、Code Build上でSchemaSpyを実行。(AWSコンソールで設定をする)  
+生成されたHTMLをアーティファクトとしてS3に出力し、ホスティングする。
+
+![ESC構成図](./doc/schema-spy.png)
+
 ## 環境構築手順  
 
 かみんぐすーん  
