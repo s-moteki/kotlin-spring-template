@@ -1,8 +1,6 @@
 package com.sample.demo.domain.dto
 
 
-import java.sql.Timestamp
-
 /**
  * ユーザー情報を保持するDTO
  *
@@ -17,17 +15,11 @@ data class UserDto(
   val name: String = "",
 
   /** 年齢 */
-  val age: Int?,
+  val age: Int = 0,
 
   /** パスワード */
-  val password: String?,
+  val password: String = "",
 
   /** アクセストークン */
-  val accessToken: String?,
-
-  /** 作成日 */
-  val createdAt: Timestamp?,
-
-  /** 更新日 */
-  val updatedAt: Timestamp?
+  val accessToken: String = ""
 )
