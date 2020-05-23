@@ -47,20 +47,20 @@ buildspecをそれぞれの環境に適した設定で修正し、Code Build上�
 
 ## 環境構築手順  
 
-1.リポジトリのクローン
-> git clone git@github.com:s-moteki/kotlin-spring-template.git
+1.リポジトリのクローン  
+`git clone git@github.com:s-moteki/kotlin-spring-template.git`  
 
-2.ディレクトリの移動
-> cd kotlin-spring-template
+2.ディレクトリの移動  
+`cd kotlin-spring-template`
 
-3.DBコンテナの起動
-> docker-compose up -d --build sample_db
+3.DBコンテナの起動  
+`docker-compose up -d --build sample_db`
 
 4.プロジェクトのビルド  
-> ./gradlew clean build  
+`./gradlew clean build`  
 
 5.コンテナ全体を起動  
-> docker-compose up --build  
+`docker-compose up --build`  
 
 ※次回以降手順2、5で起動
 
