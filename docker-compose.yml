@@ -3,13 +3,13 @@ services:
 
   # アプリケーション
   sample_app:
-    build: ./..
+    build: ""
     working_dir: /var/app/
     depends_on:
       - sample_db
     tty: true
     volumes:
-      - ./../:/app:cached
+      - ./:/app:cached
       - ~/gradle:/root/.gradle
     ports:
       - "8080:8080"
@@ -25,8 +25,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf"
-      - "./nginx/conf.d/.htpasswd:/etc/nginx/conf.d/.htpasswd"
+      - "./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./docker/nginx/conf.d/.htpasswd:/etc/nginx/conf.d/.htpasswd"
 
   # DB
   sample_db:
@@ -34,9 +34,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "./mysql/db:/var/lib/mysql"
-      - "./mysql/logs:/var/log/mysql"
-      - "./mysql/my.cnf:/etc/mysql/conf.d/my.cnf"
+      - "./docker/mysql/db:/var/lib/mysql"
+      - "./docker/mysql/logs:/var/log/mysql"
+      - "./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf"
     environment:
       MYSQL_DATABASE: "sample-db"
       MYSQL_USER: "root"
