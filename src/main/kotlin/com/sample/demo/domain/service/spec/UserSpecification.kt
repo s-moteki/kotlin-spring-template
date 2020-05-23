@@ -25,8 +25,13 @@ class UserSpecification {
     fun generateWhereByCondition(userDto: UserDto): Specification<UserEntity> {
 
       val conditionList = mutableListOf<Specification<UserEntity>>()
+
       if (userDto.userId.isNotBlank()) {
         conditionList.add(eqUserIdWhere(userDto.userId))
+      }
+
+      if (userDto.password.isNotBlank()) {
+        conditionList.add(eqPasswordWhere(userDto.password))
       }
 
       return conditionList.stream().reduce(noneWhere(), Specification<UserEntity>::and)
@@ -38,10 +43,19 @@ class UserSpecification {
      */
     private fun eqUserIdWhere(userId: String): Specification<UserEntity> {
       return Specification { root: Root<UserEntity>, _: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
-        criteriaBuilder.equal(root.get(UserEntity_.userId), "%$userId%")
+        criteriaBuilder.equal(root.get(UserEntity_.userId), userId)
       }
     }
 
+    /**
+     * passwordの等価検索条件
+     * @return 等価条件Where
+     */
+    private fun eqPasswordWhere(password: String): Specification<UserEntity> {
+      return Specification { root: Root<UserEntity>, _: CriteriaQuery<*>, criteriaBuilder: CriteriaBuilder ->
+        criteriaBuilder.equal(root.get(UserEntity_.password), password)
+      }
+    }
 
     /**
      * @return 無条件Specification
