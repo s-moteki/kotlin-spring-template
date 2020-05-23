@@ -53,17 +53,19 @@ buildspecをそれぞれの環境に適した設定で修正し、Code Build上�
 2.ディレクトリの移動  
 `cd kotlin-spring-template`
 
-3.DBコンテナの起動(バックグラウンドの初期化で時間がかかる場合があります)  
-`docker-compose up -d --build sample_db`
+3.DBコンテナの起動  
+`docker-compose up --build sample_db`
 
-4.プロジェクトのビルド(失敗する場合3が未完了なので少し時間をあけてください)  
+4.プロジェクトのビルド  
 `./gradlew clean build`  
 
 5.コンテナ全体を起動  
 `docker-compose up --build`  
 
-※次回以降手順2、5で起動
+※次回以降 `docker-compose up` のみで起動  
 
 ### 起動後イメージ  
 
-![コンテナイメージ](./doc/container.png)
+![コンテナイメージ](./doc/container.png)  
+
+※最低限DBコンテナが起動してあれば開発可能(アプリは `./gradlew bootRun` で起動)
