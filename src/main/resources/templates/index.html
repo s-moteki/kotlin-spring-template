@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" layout:decorate="~{commons/layout}"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8" content="noindex,nofollow,noarchive" name="robots">
+  <title>Topページ</title>
+</head>
+<body>
+<section class="hero is-large" layout:fragment="contents">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <p class="subtitle is-5 blinking">ユーザーID、パスワードを入力してください。</p>
+        <form th:action="@{/login}" th:method="post" th:object="${loginAdminForm}">
+          <div class="field">
+            <label class="label">ユーザーID</label>
+            <div class="control">
+              <input class="input" placeholder="ユーザーID" th:field="*{userId}" type="text">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">パスワード</label>
+            <div class="control">
+              <input class="input" placeholder="パスワード" th:field="*{password}" type="password">
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <input class="button is-link" type="submit" value="LOGIN"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
