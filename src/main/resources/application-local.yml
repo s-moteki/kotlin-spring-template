@@ -12,6 +12,14 @@ spring:
     username: root
     password: root
     driverClassName: com.mysql.cj.jdbc.Driver
+  # メッセージ
+  messages:
+    cache-duration: -1
+    encoding: UTF-8
+    basename: messages
+  # テンプレートエンジン
+  thymeleaf:
+    cache: false
 
 #---------------
 # SQL LOG 設定
@@ -25,6 +33,7 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+
 #---------------------
 # アプリケーション固有
 #---------------------
