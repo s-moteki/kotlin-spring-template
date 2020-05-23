@@ -2,10 +2,10 @@ import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  id("org.springframework.boot") version "2.3.0.RELEASE"
+  id("org.springframework.boot") version "2.2.5.RELEASE"
   id("io.spring.dependency-management") version "1.0.9.RELEASE"
-  kotlin("jvm") version "1.3.72"
-  kotlin("plugin.spring") version "1.3.72"
+  kotlin("jvm") version "1.3.61"
+  kotlin("plugin.spring") version "1.3.61"
   kotlin("plugin.jpa") version "1.3.61"
   kotlin("kapt") version "1.3.61"
   idea
@@ -14,6 +14,13 @@ plugins {
 group = "com.sample"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+val developmentOnly by configurations.creating
+configurations {
+  runtimeClasspath {
+    extendsFrom(developmentOnly)
+  }
+}
 
 repositories {
   mavenCentral()
