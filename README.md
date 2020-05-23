@@ -47,7 +47,7 @@
 ### ER図のホスティング
 
 [buildspec](./deploy/buildspec-schemaspy.yml) をそれぞれの環境に適した設定で修正し、Code Build上でSchemaSpyを実行。(AWSコンソールで設定をする)  
-生成されたHTMLをアーティファクトとしてS3に出力し、ホスティングする。
+生成されたHTMLをS3に出力し、ホスティングする。
 
 ![ESC構成図](./doc/schema-spy.png)
 
@@ -74,7 +74,7 @@
 
 ![コンテナイメージ](./doc/container.png)  
 
-※最低限DBコンテナが起動してあれば開発可能(アプリは `./gradlew bootRun` で起動)
+※DBコンテナのみの起動でも開発が可能(アプリは `./gradlew bootRun` で起動)
 
 ### サンプル動作確認
 
