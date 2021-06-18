@@ -1,6 +1,6 @@
 # kotlin-spring-template  
 
-● Kotlin+SpringBoot(最近ハマってる)の設定などがされていて、すぐに開発ができるテンプレート。(Docker、AWS想定)  
+● Kotlin+SpringBootのテンプレート。(Docker、AWS想定)  
 
 ・実装済みのサンプル機能  
 ・作成済みのプロパティ、設定ファイル  
